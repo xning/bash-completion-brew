@@ -4,20 +4,23 @@ About
 The brew completion is just a copy of the koji completion.
 
 The brew completion target users most possibly use one of the OSs:
-Fedora2X, RHEL6/CentOS6, and RHEL7/CentOS7. Hence we need the brew
-completion to support these OSs.
 
-But the available bash-completions for these OSs are different(the
-package names followed by a asterisk doesn't support the koji completion;
-package names followed by a tidle doesn't have the koji completion)
+- Fedora2X
+- RHEL6/CentOS6
+- and RHEL7/CentOS7
+
+Hence we need the brew completion to support these OSs.
+
+But the available bash-completions for these OSs are different
 
 
-| Repo     | Fedora2X           | RHEL6                | RHEL7                |
-|:--------:|:------------------:| --------------------:|:--------------------:|
-| EPEL     | N/A                | bash-completion-1.3* | N/A                  |
-| Official | bash-compltion-2.1 | N/A                  | bash-completion-2.1~ |
-| Brew     | N/A                | bash-completion-2.1  | N/A                  |
-
+| Repo     | Fedora2X           | RHEL6                   | RHEL7                   |
+|:--------:|:------------------:| ----------------------: |:-----------------------:|
+| EPEL     | N/A                | bash-completion-1.3¹    | N/A                     |
+| Official | bash-compltion-2.1 | N/A                     | bash-completion-2.1²    |
+| Brew     | N/A                | bash-completion-2.1     | N/A                     |
+1: package doesn't support the koji completion.    
+2: package doesn't have the koji completion.
 
 Hence, we need at least express the following requirements
 
@@ -31,7 +34,7 @@ On the other way, I hope the brew completion is "normal" enough, so
 - the brew completion is not enabled after installing.
 - following bash-completion guide, a user could enable/disable
   the brew completion.
-- in the more latest system brew completion will automatically be loaded
+- in the more latest system, the brew completion will be automatically loaded
   when users type 'brew' command.
 
 Because of the above concerns, I prepared this simple RPM package.
