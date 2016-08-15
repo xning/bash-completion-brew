@@ -1,0 +1,14 @@
+# brew completion
+
+_koji_completion_enabled() {
+    local koji_completion=/etc/bash_completion.d/koji
+
+    _have _koji || [[ -e ${koji_completion} ]]
+}
+
+_brew() {
+    local koji_completion=/usr/share/bash-completion/completions/koji
+    _koji_completion_enabled || source ${koji_completion}
+    _koji "$@"
+} &&
+complete -F _brew brew arm-brew ppc-brew s390-brew sparc-brew
